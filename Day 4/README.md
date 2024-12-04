@@ -10,7 +10,7 @@ I used brute force by checking each letter in the grid and assuming it to be the
 
 ### Bonus
 
-The trivial solution above runs in $`O(rcd|S|)`$ time where $`r \times c`$ is the size of the input, $`d`$ is the number of directions ($`8`$ here) and $`S`$ is the pattern string (`XMAS` here, so $`|S|` = 4$).
+The trivial solution above runs in $`O(rcd|S|)`$ time where $`r \times c`$ is the size of the input, $`d`$ is the number of directions ($`8`$ here) and $`S`$ is the pattern string (`XMAS` here, so $`|S| = 4`$).
 
 There is an asymptotically faster solution in $`O(rcd + |S|)`$ time, using string hashing with a polynomial rolling hash. First, calculate the hash of $`S`$ in $`O(|S|)`$ time. Now suppose we are finding all horizontal left-to-right occurrences of $`S`$. We consider each row separately. Each row has length $`c`$. We can find all occurrences of $`S`$ in each row in $`O(c)`$ time using Rabin-Karp algorithm, therefore taking $`O(rc)`$ time for one direction. This can be repeated in all other directions.
 
