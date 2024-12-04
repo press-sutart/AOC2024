@@ -1,13 +1,15 @@
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
 
 int main()
 {
+    std::ifstream infile("Day 4/input.txt");
     std::vector<std::string> puzzle;
     std::string temp;
 
-    while (std::cin >> temp)
+    while (infile >> temp)
     {
         puzzle.push_back(temp);
     }
