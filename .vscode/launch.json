@@ -1,6 +1,20 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "P2",
+            "request": "launch",
+            "mainClass": "P2",
+            "projectName": "AOC2024_109be44b"
+        },
+        {
+            "type": "java",
+            "name": "P1",
+            "request": "launch",
+            "mainClass": "P1",
+            "projectName": "AOC2024_109be44b"
+        },
+        {
             "name": "C/C++: g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
