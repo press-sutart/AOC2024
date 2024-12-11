@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "D11",
+            "request": "launch",
+            "mainClass": "D11",
+            "projectName": "AOC2024_109be44b"
+        },
+        {
+            "type": "java",
+            "name": "D11P1",
+            "request": "launch",
+            "mainClass": "D11P1",
+            "projectName": "AOC2024_109be44b"
+        },
+        {
+            "type": "java",
             "name": "D10P1v1",
             "request": "launch",
             "mainClass": "D10P1v1",
