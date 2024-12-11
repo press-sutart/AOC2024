@@ -65,7 +65,7 @@ public class D6P2 {
         ArrayList<String> grid = new ArrayList<>();
 
         try {
-            File inputFile = new File("Day 6/input.txt");
+            File inputFile = new File("Day 06/input.txt");
             Scanner scanner = new Scanner(inputFile);
             while (scanner.hasNextLine()) {
                 String inputLine = scanner.nextLine();

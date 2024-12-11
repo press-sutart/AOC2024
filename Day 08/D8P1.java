@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class D8P2 {
+public class D8P1 {
     public record Coords(int r, int c) {
         public Coords add(Coords rhs) {
             return new Coords(r + rhs.r, c + rhs.c);
@@ -41,7 +41,7 @@ public class D8P2 {
         Character[][] grid;
 
         try {
-            File inputFile = new File("Day 8/input.txt");
+            File inputFile = new File("Day 08/input.txt");
             Scanner scanner = new Scanner(inputFile);
             grid = input(scanner);
             scanner.close();
@@ -71,14 +71,12 @@ public class D8P2 {
             for (Coords ant1 : antennas.get(key)) {
                 for (Coords ant2 : antennas.get(key)) {
                     if (ant1.equals(ant2)) continue;
-                    Coords diff = ant1.subtract(ant2);
-                    Coords curr = ant1;
-                    while (
-                        0 <= curr.r() && curr.r() < rows &&
-                        0 <= curr.c() && curr.c() < cols
+                    Coords antiCoords = ant1.add(ant1).subtract(ant2);
+                    if (
+                        0 <= antiCoords.r() && antiCoords.r() < rows &&
+                        0 <= antiCoords.c() && antiCoords.c() < cols
                     ) {
-                        antinodes.add(curr);
-                        curr = curr.add(diff);
+                        antinodes.add(antiCoords);
                     }
                 }
             }

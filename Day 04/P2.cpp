@@ -5,7 +5,7 @@
 
 int main()
 {
-    std::ifstream infile("Day 4/input.txt");
+    std::ifstream infile("Day 04/input.txt");
     std::vector<std::string> puzzle;
     std::string temp;
 

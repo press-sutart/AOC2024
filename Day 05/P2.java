@@ -98,7 +98,7 @@ public class P2 {
 
     public static void main(String[] args) {
         try {
-            File inputFile = new File("Day 5/input.txt");
+            File inputFile = new File("Day 05/input.txt");
             Scanner inputFileScanner = new Scanner(inputFile);
             execute(inputFileScanner);
             inputFileScanner.close();

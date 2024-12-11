@@ -4,7 +4,7 @@
 #include <vector>
 
 int main() {
-    std::ifstream input_stream("Day 9/input.txt");
+    std::ifstream input_stream("Day 09/input.txt");
     std::string disk_map;
     input_stream >> disk_map;
     input_stream.close();

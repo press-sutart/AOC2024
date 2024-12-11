@@ -16,7 +16,7 @@ int main() {
         std::greater<long long>
     > min_priority_queue_ll;
 
-    std::ifstream input_stream("Day 9/input.txt");
+    std::ifstream input_stream("Day 09/input.txt");
     std::string disk_map;
     input_stream >> disk_map;
     input_stream.close();
