@@ -12,7 +12,7 @@ $$
 ((p_x + 100 v_x) \bmod 101, (p_y + 100 v_y) \bmod 103)
 $$
 
-The quadrant of a position can be determined by comparing the coordinates against the mid-width and the mid-height ($50$ and $51$ respectively).
+The quadrant of a position can be determined by comparing the coordinates against the mid-width and mid-height ($50$ and $51$ respectively).
 
 ## Part 2
 
@@ -22,4 +22,4 @@ I switched to file output so that I could quickly scroll to look for patterns. V
 
 ![output file picture](https://github.com/press-sutart/AOC2024/blob/main/Day%2014/output.png)
 
-Now checking the times at these intervals, I scrolled until I found the first Christmas tree (left of picture).
+Now checking the times at these intervals, I scrolled until I found the first Christmas tree.
