@@ -17,7 +17,6 @@ public class D15P1 {
     public static class Solver {
         private final char ROBOT_CHAR = '@';
         private final char BOX_CHAR = 'O';
-        private final char WALL_CHAR = '#';
         private final char EMPTY_CHAR = '.';
         private final HashMap<Character, Coords> DC = new HashMap<>(Map.of(
             '^', new Coords(-1, 0),
