@@ -4,7 +4,7 @@ I used Java in Part 1 and Python (featuring pen and paper) in Part 2.
 
 Some functions can alternatively be expressed using bitwise operations. Dividing by $2^x$ is equivalent to a bitwise right shift by $x$ positions, while modulo $8$ is equivalent to taking bitwise AND with $7$ (i.e., smallest three bits). Part 1 is just doing the tedious work of writing an interpreter.
 
-In Part 2, no clear way to solve the general case came to mind, so I scrutinised my input program. (**The observations here may be specific to my input!** I will minimise the number of details I reveal, in accordance to AOC's terms and conditions to keep inputs private.)
+In Part 2, no clear way to solve the general case came to mind, so I scrutinised my input program. (**The observations here may be specific to my input!**)
 
 * The instruction with opcode 3 is used only once at the end of the program, with operand 0. This sends the instruction pointer to the start if register A does not contain 0.
 * The only instruction that modifies register A has opcode 0. This also only appears once, right before the instruction with opcode 3. Together, these two instructions resemble enclosing the rest of the program in a do-while loop:
