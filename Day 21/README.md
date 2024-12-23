@@ -42,7 +42,7 @@ Using the numeric layer map, each numeric transition produces some directional t
 
 Naturally, my answer was too high as I did not choose optimal mappings in my transition layers. As mentioned above, I hypothesised that non-zigzag shortest patterns are best. However, up to two such patterns could exist for any start and end position. To move from `2` to `9`, these are `^^>` and `>^^`. They may use the same number of moves in one layer, but after several layers, `^^>` would use fewer moves than `>^^`.
 
-Unable to find a rule and unsure if there even was one, I turned to Reddit. It turns out that a rule indeed exists: if only one non-zigzag shortest pattern is available, use it; otherwise, it is optimal to make all necessary `<` moves, then all `^` or `v` moves, and finally `>` moves. `^>` and `>^` may use the same number of moves now, but after several robot layers, `^>` will use fewer moves than `>^`. I don't know *why* this is true, but it is, and thanks to it I solved the puzzle. In hindsight, I probably could have tested more ways to order moves to observe this fact on my own...
+Unable to find a rule and unsure if there even was one, I turned to Reddit. It turns out that a rule indeed exists: if only one non-zigzag shortest pattern is available, use it; otherwise, it is optimal to make all necessary `<` moves, then all `^` or `v` moves, and finally `>` moves. I don't know *why* this works, but thanks to it I solved the puzzle. In hindsight, I probably could have tested more ways to order moves to observe this fact on my own...
 
 ## Going Further
 
