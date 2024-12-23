@@ -17,7 +17,7 @@ One way to find all triangles including some vertex $s$ is given as follows.
 1. Iterate over all neighbours $u$ of $s$.
 2. Iterate over all neighbours $v$ of $u$.
 3. Iterate over all neighbours $w$ of $v$.
-4. If $s=w$, then $\{s,u,v\}$ is a triangle.
+4. If $s=w$, then $\\{s,u,v\\}$ is a triangle.
 
 I implemented this using recursion. I called the function once for each vertex with a label that starts with `t`. The answer is the size of the union of all `HashSet<HashSet<String>>` return values.
 
@@ -28,7 +28,7 @@ A subset of vertices that are all connected to each other is known as a *clique*
 I wrote a recursive function to find cliques. For any set of vertices $S$, $getCliques(S)$ returns the set of cliques that are supersets of $S$. I attempted to add vertices $u$ to $S$. This addition is possible if and only if $u$ is a mutual neighbour of all vertices in $S$ and is not already in $S$. Let $U$ be the set of all such $u$, then
 
 $$
-getCliques(S) = \{ S \} \cup \bigcup_{u \in U} getCliques(S \cup \{u\})
+getCliques(S) = \\{ S \\} \cup \bigcup_{u \in U} getCliques(S \cup \\{u\\})
 $$
 
 Instead of searching the entire vertex set for $u$, it is sufficient to pick an arbitrary vertex $`v \in S`$ and iterate over the set of neighbours of $v$.
@@ -36,7 +36,7 @@ Instead of searching the entire vertex set for $u$, it is sufficient to pick an 
 The set of all cliques is
 
 $$
-\bigcup_{v \in V} getCliques(\{ v \})
+\bigcup_{v \in V} getCliques(\\{ v \\})
 $$
 
 However, this is extremely slow. Observe that a clique of size $n$ is found $n!$ times, corresponding to the $n!$ different orders that the $n$ vertices get added. A major optimisation I used is to ensure that each clique is only found once. Instead of arbitrarily choosing $v$, I set it to the lexicographically largest element of $S$ and iterated over lexicographically larger neighbours of $v$. This ensures that vertices in a clique are added in lexicographical order. To avoid having to find the lexicographically largest element of $S$, I let it be a parameter of the function. Below, I call it $c$.
@@ -44,17 +44,17 @@ However, this is extremely slow. Observe that a clique of size $n$ is found $n!$
 In summary, using the optimisation, $getCliques$ is computed as
 
 $$
-getCliques(c, S) = \{ S \} \cup \bigcup_{u \in U} getCliques(u, S \cup \{ u \})
+getCliques(c, S) = \\{ S \\} \cup \bigcup_{u \in U} getCliques(u, S \cup \\{ u \\})
 $$
 
 where
 
 $$
-U = \{ u \in neighbours(c) : (c < u) \wedge (u \not\in S) \wedge \forall s \in S \, (s \in neighbours(u)) \}
+U = \\{ u \in neighbours(c) : (c < u) \wedge (u \not\in S) \wedge \forall s \in S \\, (s \in neighbours(u)) \\}
 $$
 
 and the set of all cliques is
 
 $$
-\bigcup_{v \in V} getCliques(v, \{ v \})
+\bigcup_{v \in V} getCliques(v, \\{ v \\})
 $$
