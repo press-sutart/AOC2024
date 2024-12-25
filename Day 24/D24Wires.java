@@ -11,7 +11,6 @@ public class D24Wires {
     
     public HashMap<String, Integer> knownWires = new HashMap<>();
     public HashMap<String, D24Gate> gateWires = new HashMap<>();
-    public HashMap<D24Gate, String> gateOutputs = new HashMap<>();
 
     public boolean exists(String wire) {
         return knownWires.containsKey(wire) || gateWires.containsKey(wire);
@@ -61,12 +60,8 @@ public class D24Wires {
                 String input2 = gateMatcher.group(3);
                 String output = gateMatcher.group(4);
 
-                D24Gate gate1 = new D24Gate(type, input1, input2);
-                D24Gate gate2 = new D24Gate(type, input2, input1);
-
-                gateWires.put(output, gate1);
-                gateOutputs.put(gate1, output);
-                gateOutputs.put(gate2, output);
+                D24Gate gate = new D24Gate(type, input1, input2);
+                gateWires.put(output, gate);
             }
         }
     }
